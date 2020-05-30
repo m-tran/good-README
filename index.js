@@ -29,7 +29,7 @@ async function generateREADME() {
 
         // project description 
         const { projectDescription } = await inquirer.prompt({
-            type: "editor",
+            type: "input",
             message: "What is the project description?",
             name: "projectDescription",
         });
@@ -43,21 +43,21 @@ async function generateREADME() {
 
         // installation
         const { installation } = await inquirer.prompt({
-            type: "editor",
+            type: "input",
             message: "What are the installation instructions?",
             name: "installation",
         });
 
         // usage
         const { usage } = await inquirer.prompt({
-            type: "editor",
+            type: "input",
             message: "What's the usage?",
             name: "usage",
         });
 
         // license
         const { license } = await inquirer.prompt({
-            type: "editor",
+            type: "input",
             message: "Are there any licenses?",
             name: "license",
         });
@@ -90,19 +90,25 @@ async function generateREADME() {
 
         // contributing
         const { contributing } = await inquirer.prompt({
-            type: "editor",
+            type: "input",
             message: "What are the guidelines for contributing?",
             name: "contributing",
         });
 
         // tests
         const { tests } = await inquirer.prompt({
-            type: "editor",
+            type: "input",
             message: "What are the tests for your application?",
             name: "tests",
         });
 
         // questions
+
+        // write README.md
+        fs.writeFile("README.md", "# " + projectTitle, (err) => {
+            if (err) throw (err);
+            console.log("Added Title");
+        });
 
     } catch (err) {
         console.log({ error: (err) });
