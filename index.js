@@ -10,6 +10,11 @@ inquirer
         const queryURL = `https://api.github.com/users/${username}`;
 
         axios.get(queryURL).then((res) => {
-            console.log(res);
+            // console.log(res.data);
+            const email = res.data.email;
+            const profileImg = res.data.avatar_url;
+            
+            console.log(profileImg);
+            console.log(email);
         });
     });
