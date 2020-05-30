@@ -28,6 +28,29 @@ async function generateREADME() {
         })
 
         // project description 
+        const { projectDescription } = await inquirer.prompt({
+            type: "editor",
+            message: "What is the project description?",
+            name: "projectDescription",
+        })
+
+        // table of contents
+        const { tableContent } = await inquirer.prompt({
+            type: "input",
+            message: "List your table of content.",
+            name: "tableContent",
+        })
+
+        // installation
+        const { installation } = await inquirer.prompt({
+            type: "editor",
+            message: "What are the installation instructions?",
+            name: "installation",
+        })
+
+        // usage
+
+        // license
 
         // get badge
         const { userlabel } = await inquirer.prompt({
@@ -54,6 +77,12 @@ async function generateREADME() {
         const badgeURL = `https://img.shields.io/badge/${userlabel}-${usermessage}-${usercolor}`;
 
         console.log(badgeURL);
+
+        // contributing
+
+        // tests
+
+        // questions
 
     } catch (err) {
         console.log({ error: (err) });
