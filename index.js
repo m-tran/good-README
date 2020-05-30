@@ -25,32 +25,42 @@ async function generateREADME() {
             type: "input",
             message: "What is the title of your project?",
             name: "projectTitle",
-        })
+        });
 
         // project description 
         const { projectDescription } = await inquirer.prompt({
             type: "editor",
             message: "What is the project description?",
             name: "projectDescription",
-        })
+        });
 
         // table of contents
         const { tableContent } = await inquirer.prompt({
             type: "input",
             message: "List your table of content.",
             name: "tableContent",
-        })
+        });
 
         // installation
         const { installation } = await inquirer.prompt({
             type: "editor",
             message: "What are the installation instructions?",
             name: "installation",
-        })
+        });
 
         // usage
+        const { usage } = await inquirer.prompt({
+            type: "editor",
+            message: "What's the usage?",
+            name: "usage",
+        });
 
         // license
+        const { license } = await inquirer.prompt({
+            type: "editor",
+            message: "Are there any licenses?",
+            name: "license",
+        });
 
         // get badge
         const { userlabel } = await inquirer.prompt({
@@ -79,8 +89,18 @@ async function generateREADME() {
         console.log(badgeURL);
 
         // contributing
+        const { contributing } = await inquirer.prompt({
+            type: "editor",
+            message: "What are the guidelines for contributing?",
+            name: "contributing",
+        });
 
         // tests
+        const { tests } = await inquirer.prompt({
+            type: "editor",
+            message: "What are the tests for your application?",
+            name: "tests",
+        });
 
         // questions
 
