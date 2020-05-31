@@ -1,6 +1,6 @@
 # **Good README Generator**
 ***
-![badge](https://img.shields.io/badge/javascript-100%-blue)
+![badge](https://img.shields.io/badge/javascript-100%25-blue)
 ## **Description** 
 ***
 This application will help quickly generate a README outline with all the necessary sections for a great README.
