@@ -84,7 +84,7 @@ async function generateREADME() {
                 "ff69b4", "9cf"],
         });
 
-        const badgeURL = `https://img.shields.io/badge/${userlabel}-${usermessage}-${usercolor}`;
+        const badgeURL = `https://img.shields.io/badge/${userlabel}-${usermessage}25-${usercolor}`;
 
         // contributing
         const { contributing } = await inquirer.prompt({
