@@ -39,6 +39,8 @@ async function generateREADME() {
             name: "tableContent",
         });
 
+        const splitContent = tableContent.split(",").join("\n");
+
         // installation
         const { installation } = await inquirer.prompt({
             type: "input",
@@ -101,53 +103,52 @@ async function generateREADME() {
         // questions
 
         // write README.md
-        fs.writeFile("README.md", "# **" + projectTitle + "**\n***\n", (err) => {
+        await fs.writeFile("README.md", "# **" + projectTitle + "**\n***\n", (err) => {
             if (err) throw (err);
             console.log("Added Title");
         });
 
-        fs.appendFile("README.md", "![badge](" + badgeURL + ")\n", (err) => {
+        await fs.appendFile("README.md", "![badge](" + badgeURL + ")\n", (err) => {
             if (err) throw (err);
             console.log("Added Badge");
         });
 
-        fs.appendFile("README.md", "## **Description** \n***\n" + projectDescription + "\n", (err) => {
+        await fs.appendFile("README.md", "## **Description** \n***\n" + projectDescription + "\n", (err) => {
             if (err) throw (err);
             console.log("Added Description");
         });
-
-        const splitContent = tableContent.split(",").join("\n");
-        fs.appendFile("README.md", "## **Table of Contents** \n***\n" + splitContent + "\n", (err) => {
+        
+        await fs.appendFile("README.md", "## **Table of Contents** \n***\n" + splitContent + "\n", (err) => {
             if (err) throw (err);
             console.log("Added Table of Contents");
         });
 
-        fs.appendFile("README.md", "## **Installation** \n***\n" + installation + "\n", (err) => {
+        await fs.appendFile("README.md", "## **Installation** \n***\n" + installation + "\n", (err) => {
             if (err) throw (err);
             console.log("Added Installation");
         });
 
-        fs.appendFile("README.md", "## **Usage** \n***\n" + usage + "\n", (err) => {
+        await fs.appendFile("README.md", "## **Usage** \n***\n" + usage + "\n", (err) => {
             if (err) throw (err);
             console.log("Added Usage");
         });
 
-        fs.appendFile("README.md", "## **License** \n***\n" + license + "\n", (err) => {
+        await fs.appendFile("README.md", "## **License** \n***\n" + license + "\n", (err) => {
             if (err) throw (err);
             console.log("Added License");
         });
 
-        fs.appendFile("README.md", "## **Contributing** \n***\n" + contributing + "\n", (err) => {
+        await fs.appendFile("README.md", "## **Contributing** \n***\n" + contributing + "\n", (err) => {
             if (err) throw (err);
             console.log("Added Contributing");
         });
 
-        fs.appendFile("README.md", "## **Tests** \n***\n" + tests + "\n", (err) => {
+        await fs.appendFile("README.md", "## **Tests** \n***\n" + tests + "\n", (err) => {
             if (err) throw (err);
             console.log("Added Tests");
         });
 
-        fs.appendFile("README.md", "## **Questions** \n***\n" + "![profile Image](" + profileImg + ")\n" + email, (err) => {
+        await fs.appendFile("README.md", "## **Questions** \n***\n" + "![profile Image](" + profileImg + ")\n" + email, (err) => {
             if (err) throw (err);
             console.log("Added Questions");
         });
